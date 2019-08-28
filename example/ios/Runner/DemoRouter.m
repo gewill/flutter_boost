@@ -8,6 +8,7 @@
 
 #import "DemoRouter.h"
 #import <flutter_boost/FlutterBoost.h>
+#import "NativeViewController.h"
 
 @implementation DemoRouter
 
@@ -26,17 +27,26 @@
         animated:(BOOL)animated
       completion:(void (^)(BOOL))completion
 {
-    if([params[@"present"] boolValue]){
+    if ([name isEqual:@"NativeViewController"]) {
+        [self.navigationController pushViewController:[NativeViewController new] animated:YES];
+        return;
+    }
+
+    if ([params[@"query"][@"animated"] boolValue] == YES) {
+        animated = YES;
+    }
+
+    if ([params[@"present"] boolValue]) {
         FLBFlutterViewContainer *vc = FLBFlutterViewContainer.new;
         [vc setName:name params:params];
         [self.navigationController presentViewController:vc animated:animated completion:^{
-            if(completion) completion(YES);
+            if (completion) completion(YES);
         }];
-    }else{
+    } else {
         FLBFlutterViewContainer *vc = FLBFlutterViewContainer.new;
         [vc setName:name params:params];
         [self.navigationController pushViewController:vc animated:animated];
-        if(completion) completion(YES);
+        if (completion) completion(YES);
     }
 }
 
@@ -45,13 +55,12 @@
     return YES;
 }
 
-
 - (void)closePage:(NSString *)uid animated:(BOOL)animated params:(NSDictionary *)params completion:(void (^)(BOOL))completion
 {
     FLBFlutterViewContainer *vc = (id)self.navigationController.presentedViewController;
-    if([vc isKindOfClass:FLBFlutterViewContainer.class] && [vc.uniqueIDString isEqual: uid]){
+    if ([vc isKindOfClass:FLBFlutterViewContainer.class] && [vc.uniqueIDString isEqual:uid]) {
         [vc dismissViewControllerAnimated:animated completion:^{}];
-    }else{
+    } else {
         [self.navigationController popViewControllerAnimated:animated];
     }
 }

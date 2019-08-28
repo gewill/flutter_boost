@@ -12,12 +12,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+// FLBPlatform 协议：可以打开Flutter页面
 @interface DemoRouter : NSObject<FLBPlatform>
 
-@property (nonatomic,strong) UINavigationController *navigationController;
+// 通过原生的UINavigationController来管理导航栈
+@property (nonatomic, strong) UINavigationController *navigationController;
 
+//单例
 + (DemoRouter *)sharedRouter;
-
 
 @end
 

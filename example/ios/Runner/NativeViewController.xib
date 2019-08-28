@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NativeViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8c9-1s-ErM">
+                    <rect key="frame" x="148" y="418" width="118" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mC-6K-MY5">
+                            <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                            <state key="normal" title="open native page"/>
+                            <connections>
+                                <action selector="openNativePage:" destination="-1" eventType="touchUpInside" id="HvZ-qi-O5k"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCW-Vv-TuY">
+                            <rect key="frame" x="0.0" y="30" width="118" height="30"/>
+                            <state key="normal" title="open flutter page"/>
+                            <connections>
+                                <action selector="openFlutterPage:" destination="-1" eventType="touchUpInside" id="nWU-Kl-iKt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This a native page" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SzQ-4b-vG6">
+                    <rect key="frame" x="146" y="361" width="122" height="17"/>
+                    <color key="textColor" red="1" green="0.034776387919999999" blue="0.45555885509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SzQ-4b-vG6" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="JBU-Lw-cjg"/>
+                <constraint firstItem="8c9-1s-ErM" firstAttribute="top" secondItem="SzQ-4b-vG6" secondAttribute="bottom" constant="40" id="NwR-JZ-dcD"/>
+                <constraint firstItem="8c9-1s-ErM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bqx-TL-uI4"/>
+                <constraint firstItem="8c9-1s-ErM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eDe-cP-XRA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

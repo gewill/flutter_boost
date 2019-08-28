@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+
+import 'iOS_page.dart';
 import 'simple_page_widgets.dart';
 
 void main() {
@@ -28,15 +30,16 @@ class _MyAppState extends State<MyApp> {
 
         return FlutterRouteWidget();
       },
+      'FlutteriOSPageWidget': (pageName, params, _) {
+        return IOSPageWidget();
+      },
     });
 
     FlutterBoost.handleOnStartPage();
-
   }
 
   Map<String, WidgetBuilder> routes = {
-    "second": (BuildContext context) =>
-        SecondRouteWidget(),
+    "second": (BuildContext context) => SecondRouteWidget(),
   };
 
   @override
