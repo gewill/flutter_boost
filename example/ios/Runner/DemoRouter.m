@@ -32,10 +32,6 @@
         return;
     }
 
-    if ([params[@"query"][@"animated"] boolValue] == YES) {
-        animated = YES;
-    }
-
     if ([params[@"present"] boolValue]) {
         FLBFlutterViewContainer *vc = FLBFlutterViewContainer.new;
         [vc setName:name params:params];

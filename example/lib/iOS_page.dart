@@ -53,10 +53,12 @@ class IOSPageWidget extends StatelessWidget {
 
             ///后面的参数会在native的IPlatform.startActivity方法回调中拼接到url的query部分。
             ///例如：sample://nativePage?aaa=bbb
-            onTap: () =>
-                FlutterBoost.singleton.openPage("FlutteriOSPageWidget", {
-              "query": {"aaa": "ccc", "animated": true}
-            }),
+            onTap: () => FlutterBoost.singleton.openPage(
+                "FlutteriOSPageWidget",
+                {
+                  "query": {"aaa": "ccc"},
+                },
+                animated: true),
           ),
         ],
       ),
